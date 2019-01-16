@@ -29,7 +29,7 @@ Route::get('/store/book/{book}', 'StoreController@selectAuthor')->name('selectAu
 Route::get('/admin/order/mark-delivered/{id}', 'OrderController@markDelivered')->name('markDelivered');
 Route::get('/admin', function () {
     return view('admin/index');
-});
+})->middleware('auth');
 
 //Category Routes
 Route::resource('admin/category', 'CategoryController');
@@ -39,3 +39,10 @@ Route::resource('admin/book', 'BookController');
 
 //Order Routes
 Route::resource('admin/order', 'OrderController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

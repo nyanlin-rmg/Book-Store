@@ -18,13 +18,26 @@
             <li class="nav-item">
                 <a href="/admin/order" class="nav-link">Order</a>
             </li>
-
-
-
-
-            {{--<li class="active"><a href="/">Home</a></li>--}}
-            {{--<li><a href="/admin/order">Order</a></li>--}}
-            {{--<li><a href="#about">About</a></li>--}}
+            @if(Auth::check())
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ Auth::user()->name }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a href="/logout" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="dropdown-item">Logout</a>
+                        <form id="logout-form" action="/logout" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </div>
+                </li>
+            @else
+                <li class="nav-item">
+                    <a href="/login" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/register" class="nav-link">Register</a>
+                </li>
+            @endif
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

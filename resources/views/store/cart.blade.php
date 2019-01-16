@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.user-view')
 @section('title')
     <title>Cart</title>
 @endsection

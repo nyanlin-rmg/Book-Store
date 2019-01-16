@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.user-view')
 @section('title')
     <title>{{ $book->title }}</title>
 @endsection

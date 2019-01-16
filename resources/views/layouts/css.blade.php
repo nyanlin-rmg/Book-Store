@@ -5,6 +5,13 @@
 <link rel="stylesheet" type="text/css" href="/csss/sweetalert.css">
 <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+<!-- Fonts -->
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
+<!-- Styles -->
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 <style>
     .container{
         padding: 30px;
@@ -14,5 +21,11 @@
     }
     body {
         font-family: 'Open Sans', sans-serif;
+    }
+    .heading {
+        padding: 30px;
+    }
+    .heading p {
+        padding: 30px;
     }
 </style>

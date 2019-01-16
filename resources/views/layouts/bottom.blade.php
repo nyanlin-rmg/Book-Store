@@ -1,4 +1,4 @@
 <hr>
 <div class="text-center">
-    &copy; Copyright@Nyanlin-Book Store
+    &copy Copy Right@SampleBookStore
 </div>
