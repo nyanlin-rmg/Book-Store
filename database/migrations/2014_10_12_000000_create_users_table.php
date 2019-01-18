@@ -22,6 +22,11 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+        $user = \Illuminate\Support\Facades\DB::table('users')->insert([
+            'name' => 'Admin',
+            'email' => 'admin@mail.com',
+            'password' => bcrypt('12345')
+        ]);
     }
 
     /**

@@ -14,7 +14,11 @@
         @foreach($books as $book)
             <div class="row" style="padding: 30px">
                 <div class="col-md-2">
-                    <img src="../images/{{$book->cover}}" width="100" height="120">
+                    @if($book->cover == null)
+                        <img src="http://127.0.0.1:8000/images/green.png" width="100" height="120">
+                    @else
+                        <img src="http://127.0.0.1:8000/images/{{ $book->cover }}" width="100" height="120">
+                    @endif
                 </div>
                 <div class="col-md-10">
                     <h3><a href="{{ route('book.show', $book) }}">{{$book->title}}</a></h3>

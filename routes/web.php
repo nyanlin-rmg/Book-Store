@@ -39,10 +39,6 @@ Route::resource('admin/book', 'BookController');
 
 //Order Routes
 Route::resource('admin/order', 'OrderController');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');

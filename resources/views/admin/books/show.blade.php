@@ -10,7 +10,11 @@
     </ol>
     <div class="row" style="padding: 20px;">
         <div class="col-md-2">
-            <img src="http://127.0.0.1:8000/images/{{ $book->cover }}" width="170" height="200">
+            @if($book->cover == null)
+                <img src="http://127.0.0.1:8000/images/green.png" width="170" height="200">
+            @else
+                <img src="http://127.0.0.1:8000/images/{{ $book->cover }}" width="170" height="200">
+            @endif
         </div>
         <div class="col-md-9 col-md-offset-1">
             <h3>{{ $book->title }}</h3>

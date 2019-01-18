@@ -34,9 +34,6 @@
                 <li class="nav-item">
                     <a href="/login" class="nav-link">Login</a>
                 </li>
-                <li class="nav-item">
-                    <a href="/register" class="nav-link">Register</a>
-                </li>
             @endif
         </ul>
         <form class="form-inline my-2 my-lg-0">

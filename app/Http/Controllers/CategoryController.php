@@ -44,7 +44,7 @@ class CategoryController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|unique:categories|string|max:30',
-            'remark' => 'required|string|max:100'
+            'remark' => 'required|string'
         ]);
         $category = Category::create([
             'name' => $request->name,
@@ -88,7 +88,7 @@ class CategoryController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|string|max:30',
-            'remark' => 'required|string|max:100',
+            'remark' => 'required|string',
         ]);
         $category->update([
             'name' => $request->name,

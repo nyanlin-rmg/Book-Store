@@ -12,7 +12,7 @@ class StoreController extends Controller
 {
     public function index()
     {
-        $books = Book::paginate(10);
+        $books = Book::all();
         return view('store.index', ['books' => $books]);
     }
 
@@ -104,9 +104,9 @@ class StoreController extends Controller
         return view('store.index', ['books' => $books]);
     }
 
-    public function selectAuthor(Book $book)
+    public function selectAuthor($author)
     {
-        $books = Book::all()->where('author', $book->author);
+        $books = Book::all()->where('author', $author);
         return view('store.index', ['books' => $books]);
     }
 }

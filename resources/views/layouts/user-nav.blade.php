@@ -1,3 +1,14 @@
+<?php
+use App\Book;
+
+$books = Book::all();
+$authors = [];
+foreach ($books as $book) {
+    $authors[] = $book->author;
+}
+$authors = array_unique($authors);
+?>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand pacifico" href="#">Sample Book Store</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,8 +31,8 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a href="/store" class="dropdown-item">All Author</a>
-                    @foreach(\App\Book::all()->sortBy('author') as $book)
-                        <a href="{{ route('selectAuthor', $book) }}" class="dropdown-item">{{ $book->author }}</a>
+                    @foreach($authors as $author)
+                        <a href="{{ route('selectAuthor', $author) }}" class="dropdown-item">{{ $author }}</a>
                     @endforeach
                 </div>
             </li>

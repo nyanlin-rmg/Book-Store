@@ -24,6 +24,11 @@
         <div class="form-group{{ $errors->has('remark') ? ' has-error' : '' }}">
             <label for="remark">Remark</label>
             <textarea name="remark" cols="30" rows="10" class="form-control">{{ $category->remark }}</textarea>
+            @if($errors->has('remark'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('remark') }}</strong>
+                </span>
+            @endif
         </div>
         <input type="submit" value="Edit" class="btn btn-primary">
     </form>

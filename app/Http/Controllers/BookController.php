@@ -51,7 +51,7 @@ class BookController extends Controller
             'summary' => 'required',
             'price' => 'required',
             'category_id' => 'required',
-            'cover' => 'required|unique:books|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'cover' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $book = Book::create([
@@ -60,9 +60,11 @@ class BookController extends Controller
             'summary' => $request->summary,
             'price' => $request->price,
             'category_id' => $request->category_id,
-            'cover' => $request->file('cover')->getClientOriginalName()
         ]);
-        $request->cover->move(public_path('images'),$book['cover']);
+        if ($book['cover'] != null) {
+            $book['cover'] = $request->file('cover')->getClientOriginalName() . uniqid();
+            $request->cover->move(public_path('images'),$book['cover']);
+        }
         $book->save();
         Alert::success('Success', 'Book is added successfully');
         return redirect('admin/book');

@@ -21,7 +21,11 @@
                 <td><a href="{{ route('order.show', $order->id) }}">{{ $order->name }}</a></td>
                 <td>{{ $order->email }}</td>
                 <td>{{ $order->phone }}</td>
-                <td>{{ $order->status }}</td>
+                @if($order->status == 0)
+                    <td>Pending</td>
+                @else
+                    <td>Delivered</td>
+                @endif
             </tr>
         @endforeach
 

@@ -20,7 +20,7 @@ class CreateBooksTable extends Migration
             $table->text('summary');
             $table->float('price');
             $table->integer('category_id');
-            $table->string('cover');
+            $table->string('cover')->nullable();
             $table->timestamps();
         });
     }

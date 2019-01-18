@@ -28,4 +28,7 @@
     .heading p {
         padding: 30px;
     }
+    .help-block {
+        color: red;
+    }
 </style>
