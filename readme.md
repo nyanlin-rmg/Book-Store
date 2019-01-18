@@ -15,6 +15,13 @@ Enter Following Commands in your terminal:
 
 -php artisan vendor:publish --tag=public
 
+-If something went wrong in alert, go to https://realrashid.github.io/sweet-alert,
+
+-Login To Admin Dashboard (localhost:8000/admin)
+    -mail : admin@mail.com
+    -password: 12345
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
